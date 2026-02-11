@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 6% 6%;
+    --foreground: 0 0% 95%;
+    --card: 240 5% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 5% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 6% 6%;
+    --secondary: 240 4% 14%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 240 4% 14%;
+    --muted-foreground: 240 4% 55%;
+    --accent: 240 4% 14%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 160 84% 39%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ─── Custom Utilities ─── */
+
+.custom-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+.glow-card {
+  box-shadow:
+    0 0 20px rgba(16, 185, 129, 0.1),
+    0 0 60px rgba(16, 185, 129, 0.03);
+}
+
+.bg-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    hsl(var(--muted-foreground) / 0.06) 1px,
+    transparent 0
+  );
+  background-size: 24px 24px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+.delay-1 {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+.delay-2 {
+  animation-delay: 0.25s;
+  opacity: 0;
+}
+.delay-3 {
+  animation-delay: 0.4s;
+  opacity: 0;
+}
