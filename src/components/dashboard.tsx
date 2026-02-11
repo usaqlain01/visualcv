@@ -107,13 +107,15 @@ export function Dashboard() {
 
             {/* Nav Actions */}
             <div className="flex items-center gap-2">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-xs font-mono hidden sm:flex gap-1.5"
-              >
-                <Download className="w-3.5 h-3.5" /> Resume
-              </Button>
+              <a href="/resume.pdf" download="UsmanSaqlain_Resume.pdf"> 
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-xs font-mono hidden sm:flex gap-1.5"
+                >
+                  <Download className="w-3.5 h-3.5" /> Resume
+                </Button>
+              </a>
               <Button
                 variant="ghost"
                 size="sm"
