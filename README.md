@@ -86,3 +86,7 @@ All resume content is centralized in `src/data/resume-data.ts`. Edit this single
 ## License
 
 This project is private and not licensed for redistribution.
+
+## Github
+
+Always create a Feature Branch Merge to trigger Vercel pipeline.
