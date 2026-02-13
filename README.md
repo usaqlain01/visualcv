@@ -1,3 +1,5 @@
+<img width="1656" height="1400" alt="image" src="https://github.com/user-attachments/assets/bc53c843-49d9-44fe-bec9-a7dac0e4841a" />
+
 # VisualCV
 
 An interactive resume dashboard built with Next.js, React, and Tailwind CSS. Presents professional experience, skill visualizations, certifications, and contact information in a clean, responsive single-page layout with dark/light mode support.
