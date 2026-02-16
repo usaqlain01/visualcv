@@ -31,7 +31,7 @@ const navLinks: NavLink[] = [
   { href: "/resume.pdf", label: "Resume", icon: Download, download: "UsmanSaqlain_Resume.pdf" },
   { href: "/", label: "Portfolio", icon: Briefcase },
   { href: "/ai-labs", label: "AI Labs", icon: FlaskConical },
-  { href: "#", label: "Projects", icon: FolderGit2 },
+  { href: "/dash-demo", label: "Dash Demo", icon: FlaskConical },
 ];
 
 export function Header() {
