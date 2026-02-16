@@ -92,3 +92,5 @@ This project is private and not licensed for redistribution.
 ## Github
 
 Always create a Feature Branch Merge to trigger Vercel pipeline.
+
+## Demo Nexus Scifi Dash Added.
