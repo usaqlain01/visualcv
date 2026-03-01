@@ -1,7 +1,9 @@
+// src/components/dashboard.tsx
 "use client";
 
 import { useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   PieChart,
   Pie,
@@ -10,11 +12,17 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import {
+  Moon,
+  Sun,
+  Download,
   Briefcase,
+  FolderGit2,
   Mail,
   Phone,
   Linkedin,
   Github,
+  MapPin,
+  Shield,
   GraduationCap,
   Award,
   BookOpen,
@@ -23,6 +31,10 @@ import {
   ExternalLink,
   Sparkles,
   Construction,
+  Globe,
+  Satellite,
+  FlaskConical,
+  LayoutDashboard,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -32,6 +44,7 @@ import { Switch } from "@/components/ui/switch";
 import { SkillBar } from "@/components/skill-bar";
 import { ExperienceCard } from "@/components/experience-card";
 import { ChatBubble } from "@/components/chat-bubble";
+import { ConstructionOverlay } from "@/components/construction-overlay";
 import { useTheme } from "@/components/theme-provider";
 import {
   personalInfo,
@@ -53,7 +66,7 @@ const chatMessages: { from: "bot" | "user"; text: string }[] = [
   { from: "user", text: "What's his strongest technical area?" },
   {
     from: "bot",
-    text: "Usman's deepest expertise is in Drupal and PHP — 12+ years of enterprise-level development including complex migrations, custom module architecture, and federal compliance work. He pairs that with strong DevOps and cloud infrastructure skills on AWS.",
+    text: "Usman's deepest expertise is in Drupal and PHP with 13+ years of enterprise-level development including complex migrations, custom module architecture, and federal compliance work. He pairs that with strong DevOps and cloud infrastructure skills on AWS.",
   },
   { from: "user", text: "Is he open to new opportunities?" },
   {
@@ -74,10 +87,10 @@ export function Dashboard() {
   return (
     <div className="bg-grid min-h-screen">
 
-      {/* ═══════ BODY ═══════ */}
+      {/* BODY */}
       <main className="max-w-[1440px] mx-auto px-4 md:px-6 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-          {/* ──── COL 1: Skills ──── */}
+          {/* COL 1: Skills */}
           <div className="space-y-5 fade-up delay-1">
             {/* Proficiencies */}
             <Card className="glow-card border-border/50 bg-card/50 backdrop-blur">
@@ -93,6 +106,7 @@ export function Dashboard() {
                     key={s.name}
                     name={s.name}
                     level={s.level}
+                    unit={s.unit}
                     delay={200 + i * 80}
                   />
                 ))}
@@ -186,7 +200,7 @@ export function Dashboard() {
             </Card>
           </div>
 
-          {/* ──── COL 2: Experience ──── */}
+          {/* COL 2: Experience */}
           <div className="space-y-5 fade-up delay-2">
             {/* Current Position */}
             <Card className="glow-card border-border/50 bg-card/50 backdrop-blur">
@@ -254,11 +268,11 @@ export function Dashboard() {
             </Card>
           </div>
 
-          {/* ──── COL 3: AI Chat + Contact ──── */}
+          {/* COL 3: AI Chat + Contact */}
           <div className="space-y-5 fade-up delay-3">
-            {/* AI Chat */}
+            {/* AI Chat with hover overlay */}
             <Card
-              className="glow-card border-border/50 bg-card/50 backdrop-blur flex flex-col"
+              className="glow-card border-border/50 bg-card/50 backdrop-blur flex flex-col group relative"
               style={{ minHeight: "520px" }}
             >
               <CardHeader className="pb-2 shrink-0">
@@ -275,7 +289,8 @@ export function Dashboard() {
                   </Badge>
                 </div>
               </CardHeader>
-              <CardContent className="flex-1 flex flex-col min-h-0">
+              <CardContent className="flex-1 flex flex-col min-h-0 relative">
+                {/* Chat messages area */}
                 <div className="flex-1 overflow-y-auto custom-scroll space-y-3 pr-1 mb-3">
                   {chatMessages.map((msg, i) => (
                     <ChatBubble key={i} from={msg.from} text={msg.text} />
@@ -300,8 +315,11 @@ export function Dashboard() {
                   </Button>
                 </div>
                 <p className="text-[9px] text-muted-foreground/60 text-center mt-1.5 font-mono">
-                  AI assistant under development — live demo coming soon
+                  AI assistant under development
                 </p>
+
+                {/* Construction overlay on hover */}
+                <ConstructionOverlay />
               </CardContent>
             </Card>
 
@@ -322,6 +340,12 @@ export function Dashboard() {
                       color: "text-rose-500",
                     },
                     {
+                      icon: Globe,
+                      label: personalInfo.website,
+                      href: `https://${personalInfo.website}`,
+                      color: "text-emerald-500",
+                    },
+                    {
                       icon: Linkedin,
                       label: "LinkedIn Profile",
                       href: `https://${personalInfo.linkedin}`,
@@ -337,7 +361,7 @@ export function Dashboard() {
                       icon: Phone,
                       label: personalInfo.phone,
                       href: `tel:${personalInfo.phone}`,
-                      color: "text-emerald-500",
+                      color: "text-amber-500",
                     },
                   ].map((item) => (
                     <a
@@ -345,13 +369,13 @@ export function Dashboard() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 p-2.5 rounded-lg border border-border/30 hover:border-emerald-500/40 hover:bg-emerald-500/5 transition-all group"
+                      className="flex items-center gap-3 p-2.5 rounded-lg border border-border/30 hover:border-emerald-500/40 hover:bg-emerald-500/5 transition-all group/link"
                     >
                       <item.icon className={`w-4 h-4 ${item.color}`} />
-                      <span className="text-xs text-foreground/70 group-hover:text-foreground transition-colors font-mono truncate">
+                      <span className="text-xs text-foreground/70 group-hover/link:text-foreground transition-colors font-mono truncate">
                         {item.label}
                       </span>
-                      <ExternalLink className="w-3 h-3 text-muted-foreground ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <ExternalLink className="w-3 h-3 text-muted-foreground ml-auto opacity-0 group-hover/link:opacity-100 transition-opacity" />
                     </a>
                   ))}
                 </div>
@@ -361,7 +385,7 @@ export function Dashboard() {
         </div>
       </main>
 
-      {/* ═══════ FOOTER ═══════ */}
+      {/* FOOTER */}
       <footer className="border-t border-border/50 bg-card/30 backdrop-blur mt-4">
         <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -380,7 +404,7 @@ export function Dashboard() {
                         {education.degree}
                       </p>
                       <p className="text-[10px] text-muted-foreground font-mono">
-                        {education.school} — {education.year}
+                        {education.school} &mdash; {education.year}
                       </p>
                     </div>
                   </div>
@@ -397,7 +421,7 @@ export function Dashboard() {
                           {cert.name}
                         </p>
                         <p className="text-[10px] text-muted-foreground font-mono">
-                          {cert.issuer} — {cert.date}
+                          {cert.issuer} &mdash; {cert.date}
                         </p>
                       </div>
                     </div>
@@ -446,8 +470,7 @@ export function Dashboard() {
           <Separator className="my-5 opacity-50" />
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="text-[10px] text-muted-foreground font-mono">
-              © {new Date().getFullYear()} Usman Saqlain — Built with Next.js,
-              React, Tailwind CSS & shadcn/ui
+              &copy; {new Date().getFullYear()} Usman Saqlain
             </p>
             <div className="flex items-center gap-1 text-[10px] text-muted-foreground font-mono">
               <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />

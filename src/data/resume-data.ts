@@ -1,35 +1,42 @@
+// src/data/resume-data.ts
 export const personalInfo = {
   name: "Usman Saqlain",
   title: "Usman's Technical Profile",
   subtitle: "Senior Full-Stack Developer & AI Solutions Engineer",
   tagline:
-    "12+ years building enterprise web applications with PHP, Drupal, Python & modern JavaScript frameworks. Specialized in cloud infrastructure, DevOps, and AI/ML automation.",
+    "12+ years building enterprise web applications with PHP, Drupal, Python & modern JavaScript frameworks. Skilled in cloud infrastructure, DevOps, SecOps, CI/CD, automation and AI toolchains & development.",
   location: "Chicago Metropolitan Area, IL",
   email: "usaqlain01@gmail.com",
   phone: "630-802-7363",
   linkedin: "linkedin.com/in/usmansaqlain",
   github: "github.com/usaqlain01",
+  website: "usmanport.com",
   clearance: "US Security Clearance: Active",
 };
 
 export const skills = [
-  { name: "Drupal / PHP", level: 95 },
-  { name: "REST APIs & Integrations", level: 90 },
-  { name: "CI/CD & DevOps", level: 88 },
-  { name: "AWS / Cloud Infra", level: 85 },
-  { name: "SQL / NoSQL / Search", level: 84 },
-  { name: "JavaScript / TypeScript", level: 82 },
-  { name: "Docker / Containers", level: 80 },
-  { name: "Python & AI/ML", level: 78 },
-  { name: "WCAG / Accessibility", level: 76 },
-  { name: "React / Angular", level: 72 },
+  { name: "Drupal CMS", level: 11, unit: "years" },
+  { name: "PHP / SQL", level: 13, unit: "years" },
+  { name: "HTML / CSS / JS", level: 15, unit: "years" },
+  { name: "AWS / Cloud Infrastructure", level: 5, unit: "years" },
+  { name: "DevOps / CI/CD Pipelining", level: 6, unit: "years" },
+  { name: "Docker / Containerization / Virtualization", level: 7, unit: "years" },
+  { name: "jQuery / Angular", level: 9, unit: "years" },
+  { name: "React / Next.js", level: 3, unit: "years" },
+  { name: "Tailwind / Bootstrap / SASS", level: 5, unit: "years" },
+  { name: "GraphQL & Web3 APIs", level: 3, unit: "years" },
+  { name: "Prompt Engineering & Proficient LLM Utilization", level: 2, unit: "years" },
+  { name: "Code Generation & AI Assisted Development", level: 2, unit: "years" },
+  { name: "Task Chaining & Autonomous Agentic Loops", level: 1, unit: "years" },
+  { name: "MCP / RAG", level: 0.5, unit: "years" },
+  { name: "LangChain / LangGraph / AIOps", level: 0.5, unit: "years" },
 ];
 
 export const skillDistribution = [
-  { name: "Back End", value: 33, color: "#10b981" },
-  { name: "AI / ML", value: 21, color: "#8b5cf6" },
-  { name: "Cloud & DevOps", value: 23, color: "#3b82f6" },
-  { name: "Front End", value: 23, color: "#f59e0b" },
+  { name: "Drupal Full-Stack", value: 43, color: "#10b981" },
+  { name: "Full-Stack Applications & APIs", value: 21, color: "#f59e0b" },
+  { name: "AI Toolchains & Solutions", value: 23, color: "#8b5cf6" },
+  { name: "Cloud Infrastructure", value: 13, color: "#3b82f6" },
 ];
 
 export interface Experience {
@@ -46,23 +53,44 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    id: "genesys-works",
+    company: "Genesys Works",
+    shortName: "Genesys Works",
+    role: "Drupal, React & AI Applications Lead",
+    location: "Remote - Houston, TX",
+    period: "Nov 2025 - Present",
+    summary:
+      "Building Drupal Alumni Portal and Next.js Partner Portal with AI-powered tooling and cross-platform integrations.",
+    highlights: [
+      "Converted Figma wireframes into a functional Alumni Portal modeled after LinkedIn's UX patterns",
+      "Built interactive dashboards and control structures in Next.js using AI-assisted rapid development",
+      "Implemented Azure Functions as an API gateway connecting application portals to Salesforce",
+      "Integrated RAG-based chatbots and MCP server connections across applications and services",
+      "Configured Moodle LMS integrations with custom Drupal entities serving as its presentation layer",
+      "Developed custom Drupal modules and connectors for task management, to-do tracking and relationships",
+      "Applied AI tooling across the SDLC to bridge SME gaps, automate QA and accelerate delivery",
+      "Architected data flow pipelines between portals, Salesforce and third-party API gateways",
+    ],
+  },
+  {
     id: "concept-plus",
     company: "Concept Plus LLC",
     shortName: "Concept Plus",
     role: "Senior Drupal Developer",
-    location: "Remote — Fairfax, VA",
-    period: "Dec 2024 — Present",
+    location: "Remote - Fairfax, VA",
+    period: "Dec 2024 - Oct 2025",
     type: "Federal Contractor: HHS",
     summary:
-      "Leading development, deployment, and migration of web applications for the U.S. Department of Health & Human Services.",
+      "Developed, deployed, maintained and migrated web applications for the U.S. Department of Health & Human Services.",
     highlights: [
-      "Architected new features and integrated reliable APIs for federal web portals",
-      "Deployed and maintained robust AWS cloud infrastructure with automated pipelines",
+      "Developed new features, proposed novel solutions and integrated reliable APIs and services",
+      "Deployed code and configurations to AWS Cloud and maintained robust cloud infrastructure",
       "Streamlined frontend using USWDS and reusable Paragraphs components",
       "Built connector modules and custom plugins for the USA Jobs Portal API",
       "Enhanced unified portal search with Apache Solr and optimized caching via Redis",
       "Wrote Ansible automation scripts for content backup and CI/CD delivery pipelines",
       "Implemented AMS SSO authentication and maintained federal security policies",
+      "Established remote dev environments utilizing WSL, DDEV and Docker-based containerd sandboxes",
     ],
   },
   {
@@ -71,7 +99,7 @@ export const experiences: Experience[] = [
     shortName: "Masternode",
     role: "Co-Founder & Technical Architect",
     location: "Chicago, IL",
-    period: "Mar 2022 — May 2024",
+    period: "Mar 2022 - May 2024",
     type: "Co-Founded Startup",
     summary:
       "Co-founded a Web3 platform for pooling and deploying blockchain nodes on AWS, building the full-stack architecture from the ground up.",
@@ -89,8 +117,8 @@ export const experiences: Experience[] = [
     company: "HNI Corporation",
     shortName: "HNI Corp",
     role: "Senior Drupal Developer",
-    location: "Glen Ellyn, IL — Muscatine, IA",
-    period: "Aug 2019 — Mar 2022",
+    location: "Glen Ellyn, IL - Muscatine, IA",
+    period: "Aug 2019 - Mar 2022",
     summary:
       "Built complete e-commerce solutions, provisioned cloud infrastructure, and managed CI/CD pipelines for a Fortune 500 manufacturer.",
     highlights: [
@@ -107,14 +135,15 @@ export const experiences: Experience[] = [
     shortName: "Walgreens",
     role: "Software Engineer",
     location: "Deerfield, IL",
-    period: "Sep 2018 — Aug 2019",
+    period: "Sep 2018 - Aug 2019",
     summary:
       "Led migration of an entire Oracle ecosystem to a modern PHP CMS, achieving millions in cost savings.",
     highlights: [
       "Migrated Oracle data structures into Drupal entities with modeled type relationships",
       "Decoupled the frontend using Angular SPA with a custom API gateway module",
       "Optimized databases, configured CDNs, and integrated Varnish Cache to reduce latency",
-      "Saved millions by replacing Oracle contracts with Drupal — zero performance loss",
+      "Identified bottlenecks through rigorous load testing and debugged them systematically",
+      "Saved millions by replacing Oracle contracts with Drupal without performance loss",
     ],
   },
   {
@@ -123,7 +152,7 @@ export const experiences: Experience[] = [
     shortName: "BuiltIn",
     role: "Developer",
     location: "Chicago, IL",
-    period: "Jan 2018 — Jul 2018",
+    period: "Jan 2018 - Jul 2018",
     summary:
       "Built listing applications on distributed cloud containers and integrated third-party APIs for a fast-growing tech startup.",
     highlights: [
@@ -139,7 +168,7 @@ export const experiences: Experience[] = [
     shortName: "Caxy",
     role: "Web Developer",
     location: "Chicago, IL",
-    period: "Apr 2015 — Jun 2017",
+    period: "Apr 2015 - Jun 2017",
     summary:
       "Built and maintained diverse web and mobile applications using PHP MVCs, Drupal CMS, and JavaScript frameworks for major institutions.",
     highlights: [
@@ -147,6 +176,7 @@ export const experiences: Experience[] = [
       "Contributed modules, patches, and volunteered as maintainer on drupal.org",
       "Wrote complete unit and functional testing suites for Drupal, Symfony, and Laravel",
       "Designed responsive, WCAG-compliant interfaces with optimized SEO",
+      "Supported multiple projects simultaneously, enhancing workflow management skills",
     ],
   },
 ];
@@ -205,6 +235,6 @@ export const courses = [
 ];
 
 export const githubStats = {
-  contributions: 330,
+  contributions: 432,
   period: "Last 12 months",
 };
