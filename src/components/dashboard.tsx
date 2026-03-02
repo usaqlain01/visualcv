@@ -463,7 +463,11 @@ export function Dashboard() {
                       </div>
                       <Badge
                         variant="outline"
-                        className="text-[9px] font-mono shrink-0 border-violet-500/30 text-violet-600 dark:text-violet-400"
+                        className={`text-[9px] font-mono shrink-0 ${
+                          course.status === "Completed"
+                            ? "border-emerald-500/30 text-emerald-600 dark:text-emerald-400"
+                            : "border-violet-500/30 text-violet-600 dark:text-violet-400"
+                        }`}
                       >
                         {course.status}
                       </Badge>

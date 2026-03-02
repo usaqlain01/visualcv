@@ -210,12 +210,7 @@ export const courses = [
   {
     name: "Claude Code: A Highly Agentic Coding Assistant",
     provider: "DeepLearning.AI",
-    status: "In Progress",
-  },
-  {
-    name: "Generative AI for Everyone",
-    provider: "DeepLearning.AI",
-    status: "In Progress",
+    status: "Completed",
   },
   {
     name: "Build Apps with LangChain",
@@ -230,7 +225,7 @@ export const courses = [
   {
     name: "Build AI Apps with MCP Servers",
     provider: "DeepLearning.AI",
-    status: "In Progress",
+    status: "Completed",
   },
 ];
 
