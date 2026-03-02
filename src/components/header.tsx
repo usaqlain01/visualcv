@@ -1,3 +1,4 @@
+// src/components/header.tsx
 "use client";
 
 import Image from "next/image";
@@ -9,7 +10,12 @@ import {
   Download,
   Briefcase,
   FolderGit2,
+  Monitor,
+  Computer,
+  Code,
+  Database,
   FlaskConical,
+  Server,
   Shield,
   MapPin,
 } from "lucide-react";
@@ -29,9 +35,9 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   { href: "/resume.pdf", label: "Resume", icon: Download, download: "UsmanSaqlain_Resume.pdf" },
-  { href: "/", label: "Portfolio", icon: Briefcase },
+  { href: "/", label: "Overview", icon: Monitor },
   { href: "/ai-labs", label: "AI Labs", icon: FlaskConical },
-  { href: "/dash-demo", label: "Dash Demo", icon: FlaskConical },
+  { href: "/dash-demo", label: "Dash Demo", icon: Server },
 ];
 
 export function Header() {
@@ -79,7 +85,7 @@ export function Header() {
                       size="sm"
                       className="text-xs font-mono hidden sm:flex gap-1.5"
                     >
-                      <Icon className="w-3.5 h-3.5" /> {link.label}
+                      <Icon className={"w-3.5 h-3.5"} /> {link.label}
                     </Button>
                   </a>
                 );
@@ -96,7 +102,7 @@ export function Header() {
                         : ""
                     }`}
                   >
-                    <Icon className="w-3.5 h-3.5" /> {link.label}
+                    <Icon className={"w-3.5 h-3.5"} /> {link.label}
                   </Button>
                 </Link>
               );

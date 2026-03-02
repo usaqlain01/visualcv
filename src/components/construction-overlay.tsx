@@ -13,7 +13,7 @@ export function ConstructionOverlay() {
   }, []);
 
   return (
-    <div className="absolute inset-0 z-10 flex items-center justify-center rounded-xl bg-background/85 dark:bg-background/90 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
+    <div className="absolute inset-0 z-10 flex items-center justify-center rounded-xl bg-white/90 dark:bg-zinc-800/95 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
       <div className="flex flex-col items-center gap-4 px-6 py-5 max-w-[260px]">
         {/* Icon row */}
         <div className="flex items-center gap-4">

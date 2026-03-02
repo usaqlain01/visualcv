@@ -3,7 +3,6 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import {
   PieChart,
   Pie,
@@ -12,17 +11,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import {
-  Moon,
-  Sun,
-  Download,
   Briefcase,
-  FolderGit2,
   Mail,
   Phone,
   Linkedin,
   Github,
-  MapPin,
-  Shield,
   GraduationCap,
   Award,
   BookOpen,
@@ -32,15 +25,11 @@ import {
   Sparkles,
   Construction,
   Globe,
-  Satellite,
-  FlaskConical,
-  LayoutDashboard,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Switch } from "@/components/ui/switch";
 import { SkillBar } from "@/components/skill-bar";
 import { ExperienceCard } from "@/components/experience-card";
 import { ChatBubble } from "@/components/chat-bubble";
@@ -76,7 +65,7 @@ const chatMessages: { from: "bot" | "user"; text: string }[] = [
 ];
 
 export function Dashboard() {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   const dark = theme === "dark";
   const [detailExp, setDetailExp] = useState<Experience | null>(null);
   const [chatInput, setChatInput] = useState("");
@@ -86,7 +75,6 @@ export function Dashboard() {
 
   return (
     <div className="bg-grid min-h-screen">
-
       {/* BODY */}
       <main className="max-w-[1440px] mx-auto px-4 md:px-6 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
@@ -121,19 +109,35 @@ export function Dashboard() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="h-48">
+                <div className="h-56">
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                       <Pie
                         data={skillDistribution}
                         cx="50%"
-                        cy="50%"
+                        cy="55%"
                         innerRadius={40}
                         outerRadius={75}
                         paddingAngle={3}
                         dataKey="value"
                         strokeWidth={0}
-                        label={({ value }) => `${value}%`}
+                        label={({ cx, cy, midAngle, outerRadius, value }) => {
+                          const RADIAN = Math.PI / 180;
+                          const x = cx + (outerRadius + 16) * Math.cos(-midAngle * RADIAN);
+                          const y = cy + (outerRadius + 16) * Math.sin(-midAngle * RADIAN);
+                          return (
+                            <text
+                              x={x}
+                              y={y}
+                              fill="#ffffff"
+                              textAnchor="middle"
+                              dominantBaseline="central"
+                              fontSize={11}
+                            >
+                              {value}%
+                            </text>
+                          );
+                        }}
                         labelLine={false}
                       >
                         {skillDistribution.map((entry, idx) => (
@@ -142,11 +146,14 @@ export function Dashboard() {
                       </Pie>
                       <Tooltip
                         contentStyle={{
-                          background: "hsl(var(--card))",
-                          border: "1px solid hsl(var(--border))",
+                          background: "#27272a",
+                          border: "1px solid #3f3f46",
                           borderRadius: "8px",
                           fontSize: "11px",
+                          color: "#ffffff",
                         }}
+                        itemStyle={{ color: "#ffffff" }}
+                        labelStyle={{ color: "#ffffff" }}
                       />
                     </PieChart>
                   </ResponsiveContainer>
