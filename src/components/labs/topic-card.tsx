@@ -1,3 +1,4 @@
+// src/components/labs/topic-card.tsx
 "use client";
 
 import { useState } from "react";

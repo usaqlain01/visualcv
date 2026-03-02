@@ -1,3 +1,4 @@
+// src/components/labs/category-section.tsx
 import { TopicCard } from "@/components/labs/topic-card";
 import type { Topic, TopicCategory } from "@/data/labs-data";
 import { categoryLabels } from "@/data/labs-data";

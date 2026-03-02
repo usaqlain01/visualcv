@@ -1,3 +1,4 @@
+// src/components/chat-bubble.tsx
 import { Bot } from "lucide-react";
 
 interface ChatBubbleProps {

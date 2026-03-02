@@ -1,3 +1,4 @@
+// src/app/ai-labs/page.tsx
 import { Zap, FlaskConical, Target } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { TopicCard } from "@/components/labs/topic-card";

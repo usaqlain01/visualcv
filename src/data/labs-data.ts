@@ -1,3 +1,4 @@
+// src/data/labs-data.ts
 export interface Lab {
     id: string;
     title: string;
