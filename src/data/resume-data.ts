@@ -94,12 +94,12 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: "masternode",
-    company: "Masternode Inc.",
-    shortName: "Masternode",
+    id: "masternoders",
+    company: "MasterNoders Inc.",
+    shortName: "MasterNoders",
     role: "Co-Founder & Technical Architect",
     location: "Chicago, IL",
-    period: "Mar 2022 - May 2024",
+    period: "Mar 2022 - Dec 2024",
     type: "Co-Founded Startup",
     summary:
       "Co-founded a Web3 platform for pooling and deploying blockchain nodes on AWS, building the full-stack architecture from the ground up.",
