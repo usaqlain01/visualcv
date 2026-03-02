@@ -1,3 +1,4 @@
+// src/components/experience-card.tsx
 import { MapPin, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import type { Experience } from "@/data/resume-data";

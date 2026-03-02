@@ -1,3 +1,4 @@
+// src/components/labs/lab-item.tsx
 import { Clock, GitBranch, Circle, CircleDot, CheckCircle2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import type { Lab } from "@/data/labs-data";

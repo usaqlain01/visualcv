@@ -1,3 +1,4 @@
+// src/components/nexus-dashboard.tsx
 "use client";
 
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
