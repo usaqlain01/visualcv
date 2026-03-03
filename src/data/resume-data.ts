@@ -8,7 +8,7 @@ export const personalInfo = {
   location: "Chicago Metropolitan Area, IL",
   email: "usaqlain01@gmail.com",
   phone: "630-802-7363",
-  linkedin: "linkedin.com/in/usmansaqlain",
+  linkedin: "linkedin.com/in/usaqlain",
   github: "github.com/usaqlain01",
   website: "usmanport.com",
   clearance: "US Security Clearance: Active",
